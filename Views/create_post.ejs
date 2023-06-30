@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/CSS/post_style.css">
+    <title>create post</title>
+</head>
+<body>
+    <div class="login-box">
+        <h2>Post Information</h2>
+        <form>
+          <div class="user-box">
+            <input type="text" name="title" required="">
+            <label>Title</label>
+          </div>
+          <div class="user-box">
+            <input type="text" name="desc" required="">
+            <label>Description</label>
+          </div>
+          <button>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            Submit
+          </button>
+        </form>
+      </div>
+</body>
+</html>
+<script>
+    const form=document.querySelector('form')
+    form.addEventListener('submit',async(e)=>{
+        e.preventDefault();
+        const title= form.title.value;
+        const desc= form.desc.value;
+        var dateObj = new Date();
+        var month = dateObj.getUTCMonth() + 1; //months from 1-12
+        var day = dateObj.getUTCDate();
+        var year = dateObj.getUTCFullYear();
+        const createdAT= year + "/" + month + "/" + day;
+        const response=await fetch("/posts/create/new",{
+            method: "POST",
+            body:JSON.stringify({
+                title:title,
+                description:desc,
+                createdAT:createdAT,
+            }),
+            headers:{"Content-Type":"application/json"},
+        })
+    })
+</script>

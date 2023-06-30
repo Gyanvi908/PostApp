@@ -1,0 +1,65 @@
+.project {
+    text-align: center;
+    padding: 3rem;
+    background-color: #fff;
+  }
+  .heading {
+    font-size: 2rem;
+    text-align: center;
+    margin-top: 3rem;
+    font-weight: bold;
+  }
+  .underline {
+    width: 5rem;
+    height: 0.3rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1rem;
+    background-color: #32a8a4;
+  }
+  .project-card {
+    background-color: #fff;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+    box-shadow: 5px 5px 3px grey;
+  }
+  .project-image {
+    position: relative;
+  }
+  .project-image img {
+    width: 100%;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+  }
+  .start-date {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    font-size: 21px;
+    width: fit-content;
+    text-align: center;
+    background-color: #32a8a4;
+  }
+  .project-content {
+    display: grid;
+    background-image: linear-gradient(white, #f2f2f2);
+    padding: 1.5rem;
+  }
+  h4 {
+    font-weight: bold;
+    letter-spacing: 2px;
+  }
+  .project-footer {
+    margin-top: 10px;
+    color: aqua;
+  }
+  @media screen and (min-width: 876px){
+    .project {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-column-gap: 20px;
+      }
+  }

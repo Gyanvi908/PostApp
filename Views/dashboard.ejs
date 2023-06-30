@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link  rel="stylesheet" href="/CSS/dashboard_style.css">
+    <title>dashboard</title>
+</head>
+<body>
+    <div>
+        <h1 class="heading">Post <span>Information</span></h1> 
+        <section class="project">
+    <% for(let i=0;i<response.length ; i++) { %>
+
+                <div>
+                    <div class="project-card section-center">
+                      <div class="project-image">
+                        <img
+                          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqoRZ5SlyCTpjW3kLvD3_neHl4HM0DghPSkw&usqp=CAU"
+                          alt="project image"
+                        />
+              
+                        <div class="start-date"><%= response[i].createdAT %></div>   
+                      </div>
+                      <div class="project-content">
+                        <h4><%= response[i].title %></h4>
+                        <div class="project-footer">
+                          <p><%= response[i].description %></p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>                      
+           
+        <% } %>
+        </section>
+    </div>
+</body>
+</html>
